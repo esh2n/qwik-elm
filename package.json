@@ -1,0 +1,12 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "@builder.io/qwik": "^1.8.0",
+    "@types/node": "^22.5.4",
+    "elm": "^0.19.1-6",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.4",
+    "vite-plugin-elm": "^3.0.1",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
