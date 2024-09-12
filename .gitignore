@@ -6,3 +6,6 @@ dist
 dist-ssr
 *.local
 elm-stuff/
+lib
+lib-types
+tsconfig.tsbuildinfo
