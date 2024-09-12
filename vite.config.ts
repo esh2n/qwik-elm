@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import elmPlugin from "vite-plugin-elm";
+import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig(() => {
 	return {
 		build: {
@@ -15,6 +16,6 @@ export default defineConfig(() => {
 				external: ["@builder.io/qwik", "@builder.io/qwik/build"],
 			},
 		},
-		plugins: [qwikVite(), elmPlugin()],
+		plugins: [qwikVite(), tsconfigPaths(), elmPlugin()],
 	};
 });

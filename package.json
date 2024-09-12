@@ -1,12 +1,46 @@
 {
-  "dependencies": {},
-  "devDependencies": {
-    "@builder.io/qwik": "^1.8.0",
-    "@types/node": "^22.5.4",
-    "elm": "^0.19.1-6",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.4",
-    "vite-plugin-elm": "^3.0.1",
-    "vite-tsconfig-paths": "^5.0.1"
-  }
+	"name": "@esh2n/qwik-elm",
+	"version": "0.1.0",
+	"description": "Render elm component on qwik",
+	"main": "./lib/index.qwik.mjs",
+	"qwik": "./lib/index.qwik.mjs",
+	"types": "./lib-types/index.qwik.d.ts",
+	"exports": {
+		".": {
+			"import": "./lib/index.qwik.mjs",
+			"require": "./lib/index.qwik.cjs",
+			"types": "./lib-types/index.qwik.d.ts"
+		}
+	},
+	"files": ["lib", "lib-types", "src"],
+	"engines": {
+		"node": ">=15.0.0"
+	},
+	"private": false,
+	"type": "module",
+	"scripts": {
+		"prepublishOnly": "bun build && bun build.types",
+		"build": "qwik build",
+		"build.lib": "vite build --mode lib",
+		"build.types": "tsc --emitDeclarationOnly",
+		"dev": "vite --mode ssr",
+		"dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+		"fmt": "biome format --write",
+		"fmt.check": "biome check --write",
+		"release": "np",
+		"start": "vite --open --mode ssr",
+		"qwik": "qwik"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@builder.io/qwik": "^1.8.0",
+		"@types/node": "^22.5.4",
+		"elm": "^0.19.1-6",
+		"np": "^10.0.7",
+		"typescript": "^5.6.2",
+		"vite": "^5.4.4",
+		"vite-plugin-elm": "^3.0.1",
+		"vite-tsconfig-paths": "^5.0.1"
+	}
 }
